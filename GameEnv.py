@@ -10,7 +10,7 @@ class GameEnv(gym.Env):
 
         self.player = Human("Robot")
         self.ACTION_MAP = {0: 1, 1: 2, 2: 3, 3: 4, 4: 5}
-        self.POINTS_MAP = {1: -1000, 2: -500, 3: 10, 4: 9999, 5: 1000}
+        self.POINTS_MAP = {1: -1000, 2: -500, 3: 10, 4: 500, 5: 1000}
 
         self.action_space = spaces.Discrete(5)
 

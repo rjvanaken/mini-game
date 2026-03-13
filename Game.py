@@ -1,13 +1,15 @@
+from Player import Robot
 from Player import Human
 # from Player import Robot
 
 class Game:
 
+
     def __init__(self):
         self.players = []
 
-        self.p1 = Human("Player 1")
-        self.p2 = Human("Player 2")
+        self.p1 = Human("YOU")
+        self.p2 = Robot("COMPUTER", "button_game_model")
         self.players.append(self.p1)
         self.players.append(self.p2)
 
