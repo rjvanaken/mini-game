@@ -19,6 +19,14 @@ class Game:
         
 
     def run(self):
+        print("\n─────────────────────────────────────────────")
+        print('''
+How to Play: 
+- It's YOU against the CPU!
+- Your goal is to reach 10k points first by pressing buttons.
+- If you reach -10k points, you automatically lose
+- You cannot press the same button 2x in a row.
+''')
         i = 1
         while all(-10000 < player.points < 10000 for player in self.players):
             print("=================================")
