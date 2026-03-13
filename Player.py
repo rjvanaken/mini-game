@@ -3,6 +3,17 @@ class Player:
         self.points = 0
         self.last_pressed = None
         self.name = name
+        self.valid_actions = [1, 2, 3, 4, 5]
+        self.turn_penalty = 0
+
+
+    def setValidActions(self):
+        self.valid_actions = [1, 2, 3, 4, 5]
+        for num in self.valid_actions:
+            if num == self.last_pressed:
+                self.valid_actions.remove(num)
+                return
+
 
 
 
@@ -29,6 +40,7 @@ class Human(Player):
             action = input("\nENTER CHOICE: ")
             try:
                 if int(action) == self.last_pressed:
+                    print("Invalid choice, try again.")
                     success = False
                 elif action == "1":
                     self.points -= 1000
@@ -58,3 +70,10 @@ class Human(Player):
 
             if success:
                 break
+
+
+class Robot(Player):    
+    def __init__(self, name):
+        super().__init__(name)
+
+
